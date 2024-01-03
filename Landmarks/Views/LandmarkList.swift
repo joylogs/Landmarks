@@ -17,14 +17,6 @@ struct LandmarkList: View {
             Text("Select a Landmark")
         }
         .navigationTitle("Landmarks")
-        
-                
-//        NavigationView {
-//            List(landmarks) { landmark in
-//                LandmarkRow(landmark: landmark)
-//            }
-//        }
-//        .navigationViewStyle(.columns)
     }
 }
 
