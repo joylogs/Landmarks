@@ -19,6 +19,11 @@ struct LandmarkRow: View {
             Text(landmark.name)
             
             Spacer()
+            
+            if landmark.isFavorite {
+                Image(systemName: "star.fill")
+                    .foregroundStyle(.yellow)
+            }
         }
     }
 }
@@ -38,8 +43,11 @@ struct LandmarkRow: View {
 
 struct LandMarkRow_Previews: PreviewProvider
 {
-    static var previews: some View
-    {
+    static var previews: some View {
+        
+        let landmarks = ModelData().landmarks
+        
         LandmarkRow(landmark: landmarks[0])
+        LandmarkRow(landmark: landmarks[1])
     }
 }
