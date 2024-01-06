@@ -15,21 +15,16 @@ protocol RouterProtocol {
 struct Router: RouterProtocol {
     
     func request(route: Any, completion: @escaping () -> ()) {
-        
-//        let url = URL()
-        
-        let request = buildRequest(route: route)
+        let _ = buildRequest(route: route)
         
     }
     
     func buildRequest(route: Any) -> URLRequest {
         
-        let url = URL(string: "")
+        let url = URL(string: "", relativeTo: URL(string: "")!)!
+        let request = URLRequest(url: url)
         
-        
-        
-        let request =
-        
+        return request
         
     }
 }
