@@ -17,7 +17,7 @@ struct BadgeBackground: View {
                 var width: CGFloat = min(geometryReader.size.width, geometryReader.size.height)
                 let height = width
                 let xScale: CGFloat = 0.832
-                let xOffset: CGFloat = width * (1.0 - xScale) / 2.0
+                let xOffset: CGFloat = (width * (1.0 - xScale)) / 2.0
                 
                 path.move(
                     to: CGPoint(
@@ -27,27 +27,35 @@ struct BadgeBackground: View {
                 
                 HexagonParameters.segments.forEach { segment in
                     path.addLine(to: CGPoint(
-                        x: width * segment.line.x,
+                        x: width * segment.line.x + xOffset,
                         y: height * segment.line.y))
                     
                     path.addQuadCurve(
                         to: CGPoint(
-                            x: width * segment.curve.x,
+                            x: width * segment.curve.x + xOffset,
                             y: height * segment.curve.y
                         ),
                         control: CGPoint(
-                            x: width * segment.control.x,
+                            x: width * segment.control.x + xOffset,
                             y: height * segment.control.y
                         )
                     )
                 }
                 
             }
-            .fill(.black)
+            .fill(.linearGradient(
+                Gradient(colors: [Self.gradientStart, Self.gradientEnd]),
+                startPoint: UnitPoint(x: 0.5, y: 0),
+                endPoint: UnitPoint(x: 0.5, y: 0.6)
+            ))
             
         }
-        
+        .aspectRatio(1, contentMode: .fit)
     }
+    
+    static let gradientStart = Color(red: 239.0 / 255, green: 120.0 / 255, blue: 221.0 / 255)
+    static let gradientEnd = Color(red: 239.0 / 255, green: 172.0 / 255, blue: 120.0 / 255)
+    
 }
 
 struct BadgeBackground_Previews: PreviewProvider {
