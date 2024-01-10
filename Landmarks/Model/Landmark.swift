@@ -24,6 +24,14 @@ struct Landmark: Hashable, Codable, Identifiable {
         Image(imageName)
     }
     
+    var category: Category
+    
+    enum Category: String, Codable {
+        case lakes = "Lakes"
+        case rivers = "Rivers"
+        case mountains = "Mountains"
+    }
+    
     private var coordinates: Coordinates
     
     var locationCoordinate: CLLocationCoordinate2D {
