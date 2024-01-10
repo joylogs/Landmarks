@@ -18,6 +18,10 @@ class ModelData: ObservableObject {
             landmark.category.rawValue
         }
     }
+    
+    var features: [Landmark] {
+        landmarks.filter{ $0.isFeatured }
+    }
 }
 
 
