@@ -24,6 +24,12 @@ struct CategoryRow: View {
                     ForEach(items) { landmark in
 //                        Text(landmark.name)
                         CategoryItem(landmark: landmark)
+                        NavigationLink {
+                            LandmarkDetail(landmark: landmark)
+                        } label: {
+                            CategoryItem(landmark: landmark)
+                        }
+
                     }
                 }
             }
