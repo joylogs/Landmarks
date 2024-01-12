@@ -215,9 +215,7 @@
 				7603C35E2B46C77500CBD980 /* Helpers */,
 				7603C35D2B46C76600CBD980 /* Landmarks */,
 				76023C0C2B4C5E3A00470439 /* Badges */,
-				7644D66E2B4F02860065A1AB /* CategoryRow.swift */,
-				7644D6702B4F0FC80065A1AB /* CategoryItem.swift */,
-				76023C242B4E6D7400470439 /* CategoryHome.swift */,
+				7644D67A2B51BC860065A1AB /* Category */,
 				7644D6722B51B1580065A1AB /* Profile.swift */,
 				7644D6762B51B8370065A1AB /* ProfileHost.swift */,
 				7644D6782B51BBB50065A1AB /* ProfileSummary.swift */,
@@ -262,6 +260,16 @@
 				7603C3482B4552AE00CBD980 /* MapView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		7644D67A2B51BC860065A1AB /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				7644D66E2B4F02860065A1AB /* CategoryRow.swift */,
+				7644D6702B4F0FC80065A1AB /* CategoryItem.swift */,
+				76023C242B4E6D7400470439 /* CategoryHome.swift */,
+			);
+			path = Category;
 			sourceTree = "<group>";
 		};
 		76BA8E072B48801C00FB312F /* Networking */ = {

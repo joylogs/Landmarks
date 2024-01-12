@@ -14,7 +14,9 @@ struct ProfileSummary: View {
 //        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
         ScrollView {
             VStack {
-                Text()
+                Text("Notifications: ")
+                Text("")
+                
             }
         }
     }
