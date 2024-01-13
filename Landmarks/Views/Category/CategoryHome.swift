@@ -29,6 +29,7 @@ struct CategoryHome: View {
                 }
                 .listRowInsets(EdgeInsets())
             })
+            .listStyle(.inset)
             .navigationTitle("Featured")
             .toolbar {
                 Button {
