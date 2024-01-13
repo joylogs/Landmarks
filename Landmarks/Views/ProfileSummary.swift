@@ -51,8 +51,6 @@ struct ProfileSummary: View {
                         .font(.headline)
                     
                     HikeView(hike: modelData.hikes[0])
-                    
-                    
                 }
             }
         }
