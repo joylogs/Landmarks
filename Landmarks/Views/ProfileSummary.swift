@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ProfileSummary: View {
     
+    @EnvironmentObject var modelData: ModelData
     var profile: Profile
     
     var body: some View {
@@ -42,6 +43,17 @@ struct ProfileSummary: View {
                         .padding(.bottom)
                     }
                 }
+                
+                Divider()
+                
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("Recent Hikes")
+                        .font(.headline)
+                    
+                    HikeView(hike: modelData.hikes[0])
+                    
+                    
+                }
             }
         }
     }
@@ -50,5 +62,6 @@ struct ProfileSummary: View {
 struct ProfileSummary_Previews: PreviewProvider {
     static var previews: some View {
         ProfileSummary(profile: Profile.default)
+            .environmentObject(ModelData())
     }
 }
