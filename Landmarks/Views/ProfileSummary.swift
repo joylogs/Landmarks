@@ -9,14 +9,19 @@ import SwiftUI
 
 struct ProfileSummary: View {
     
+    var profile: Profile
     
     var body: some View {
-//        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+
         ScrollView {
             VStack {
-                Text("Notifications: ")
-                Text("")
+                Text(profile.username)
+                    .bold()
+                    .font(.title)
                 
+                Text("Notifications: \(profile.prefersNotifications ? "On" : "Off")")
+                Text("Seasonal Photos: \(profile.seasonalPhoto.rawValue)")
+                Text("Goal Date: ") + Text(profile.goalDate, style: .date)
             }
         }
     }
@@ -24,6 +29,6 @@ struct ProfileSummary: View {
 
 struct ProfileSummary_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileSummary()
+        ProfileSummary(profile: Profile.default)
     }
 }
