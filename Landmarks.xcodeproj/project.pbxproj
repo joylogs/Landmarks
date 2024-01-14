@@ -42,6 +42,7 @@
 		76711A9B2B49313100619E3E /* BadgeBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76711A9A2B49313100619E3E /* BadgeBackground.swift */; };
 		76BA8E092B48804F00FB312F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76BA8E082B48804F00FB312F /* Router.swift */; };
 		76DFD9A22B52FB3A002CACF8 /* HikeBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFD9A12B52FB3A002CACF8 /* HikeBadge.swift */; };
+		76DFD9A42B54589B002CACF8 /* ProfileEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76DFD9A32B54589B002CACF8 /* ProfileEditor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +101,7 @@
 		76711A9A2B49313100619E3E /* BadgeBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BadgeBackground.swift; sourceTree = "<group>"; };
 		76BA8E082B48804F00FB312F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		76DFD9A12B52FB3A002CACF8 /* HikeBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HikeBadge.swift; sourceTree = "<group>"; };
+		76DFD9A32B54589B002CACF8 /* ProfileEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +224,7 @@
 				7644D6762B51B8370065A1AB /* ProfileHost.swift */,
 				7644D6782B51BBB50065A1AB /* ProfileSummary.swift */,
 				76DFD9A12B52FB3A002CACF8 /* HikeBadge.swift */,
+				76DFD9A32B54589B002CACF8 /* ProfileEditor.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				7603C31D2B4537C700CBD980 /* LandmarksApp.swift in Sources */,
 				7603C35C2B46C57400CBD980 /* FavoriteButton.swift in Sources */,
 				7644D6792B51BBB50065A1AB /* ProfileSummary.swift in Sources */,
+				76DFD9A42B54589B002CACF8 /* ProfileEditor.swift in Sources */,
 				7644D6712B4F0FC80065A1AB /* CategoryItem.swift in Sources */,
 				7603C3562B45C25000CBD980 /* LandmarkList.swift in Sources */,
 				76023C072B4C4FEF00470439 /* BadgeSymbol.swift in Sources */,
