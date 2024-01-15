@@ -18,7 +18,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        LandmarkList()
+//        LandmarkList()
         
         TabView(selection: $tab) {
             CategoryHome()
