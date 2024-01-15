@@ -16,13 +16,10 @@ struct ProfileHost: View {
     var body: some View {
         
         VStack(alignment: .leading, spacing: 20) {
-            ProfileSummary(profile: draftProfile)
             HStack {
                 Spacer()
                 EditButton()
             }
-            
-            
             
             ProfileSummary(profile: modelData.profile)
         }
