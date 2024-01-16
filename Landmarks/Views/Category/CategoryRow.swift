@@ -23,13 +23,12 @@ struct CategoryRow: View {
                 HStack(alignment: .top, spacing: 0) {
                     ForEach(items) { landmark in
 //                        Text(landmark.name)
-                        CategoryItem(landmark: landmark)
+//                        CategoryItem(landmark: landmark)
                         NavigationLink {
                             LandmarkDetail(landmark: landmark)
                         } label: {
                             CategoryItem(landmark: landmark)
                         }
-
                     }
                 }
             }

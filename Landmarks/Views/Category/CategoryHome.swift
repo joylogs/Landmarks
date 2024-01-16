@@ -15,7 +15,7 @@ struct CategoryHome: View {
     var body: some View {
         
         NavigationSplitView {
-            List(content: {
+            List {
                 
                 modelData.features[0].image
                     .resizable()
@@ -28,8 +28,7 @@ struct CategoryHome: View {
                     CategoryRow(categoryName: key, items: modelData.categories[key]!)
                 }
                 .listRowInsets(EdgeInsets())
-            })
-            .listStyle(.inset)
+            }
             .navigationTitle("Featured")
             .toolbar {
                 Button {
