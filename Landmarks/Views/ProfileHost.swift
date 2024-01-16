@@ -51,7 +51,3 @@ struct ProfileHost_Previews: PreviewProvider {
             .environmentObject(ModelData())
     }
 }
-
-
-extension EnvironmentValues {
-}
