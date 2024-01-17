@@ -136,6 +136,7 @@
 				76711A9A2B49313100619E3E /* BadgeBackground.swift */,
 				76023C062B4C4FEF00470439 /* BadgeSymbol.swift */,
 				76023C082B4C536A00470439 /* RotatedBadgeSymbol.swift */,
+				76DFD9A12B52FB3A002CACF8 /* HikeBadge.swift */,
 				76023C0A2B4C543400470439 /* Badge.swift */,
 			);
 			path = Badges;
@@ -177,10 +178,9 @@
 			children = (
 				7603C31C2B4537C700CBD980 /* LandmarksApp.swift */,
 				7603C3502B45B85500CBD980 /* Views */,
-				7603C3522B45B88A00CBD980 /* Resources */,
-				76023C132B4C6AB400470439 /* Hikes */,
 				7603C3512B45B86200CBD980 /* Model */,
 				76BA8E072B48801C00FB312F /* Networking */,
+				7603C3522B45B88A00CBD980 /* Resources */,
 				7603C3202B4537C900CBD980 /* Assets.xcassets */,
 				7603C3222B4537C900CBD980 /* Preview Content */,
 			);
@@ -220,11 +220,8 @@
 				7603C35D2B46C76600CBD980 /* Landmarks */,
 				76023C0C2B4C5E3A00470439 /* Badges */,
 				7644D67A2B51BC860065A1AB /* Category */,
-				7644D6722B51B1580065A1AB /* Profile.swift */,
-				7644D6762B51B8370065A1AB /* ProfileHost.swift */,
-				7644D6782B51BBB50065A1AB /* ProfileSummary.swift */,
-				76DFD9A12B52FB3A002CACF8 /* HikeBadge.swift */,
-				76DFD9A32B54589B002CACF8 /* ProfileEditor.swift */,
+				76023C132B4C6AB400470439 /* Hikes */,
+				761DC0072B5806CC00720575 /* Profile */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -232,6 +229,7 @@
 		7603C3512B45B86200CBD980 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				7644D6722B51B1580065A1AB /* Profile.swift */,
 				7603C34C2B45AA4600CBD980 /* Landmark.swift */,
 				7603C34E2B45B49500CBD980 /* ModelData.swift */,
 				76023C0F2B4C681000470439 /* Hike.swift */,
@@ -266,6 +264,16 @@
 				7603C3482B4552AE00CBD980 /* MapView.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		761DC0072B5806CC00720575 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				76DFD9A32B54589B002CACF8 /* ProfileEditor.swift */,
+				7644D6762B51B8370065A1AB /* ProfileHost.swift */,
+				7644D6782B51BBB50065A1AB /* ProfileSummary.swift */,
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		7644D67A2B51BC860065A1AB /* Category */ = {
