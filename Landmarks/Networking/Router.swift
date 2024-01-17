@@ -15,7 +15,14 @@ protocol RouterProtocol {
 struct Router: RouterProtocol {
     
     func request(route: Any, completion: @escaping () -> ()) {
-        let _ = buildRequest(route: route)
+        let urlRequest = buildRequest(route: route)
+        
+        let urlSessionDataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+            
+            
+            
+        }
+        urlSessionDataTask.resume()
         
     }
     
