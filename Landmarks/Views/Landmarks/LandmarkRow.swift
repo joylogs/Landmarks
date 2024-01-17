@@ -28,19 +28,6 @@ struct LandmarkRow: View {
     }
 }
 
-//struct Turtle_Rock: PreviewProvider {
-//    static var previews: some View {
-//        LandmarkRow(landmark: landmarks[0])
-//    }
-//}
-//
-//
-//struct Silver_Salmon_Creek: PreviewProvider {
-//    static var previews: some View {
-//        LandmarkRow(landmark: landmarks[1])
-//    }
-//}
-
 struct LandMarkRow_Previews: PreviewProvider
 {
     static var previews: some View {
