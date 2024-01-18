@@ -7,26 +7,35 @@
 
 import Foundation
 
+protocol EndPointType {
+    
+    var baseURL: String { get }
+}
+
 protocol RouterProtocol {
     
-    func request(route: Any, completion: @escaping () -> ())
+    associatedtype EndPoint = EndPointType
+    
+    func request(route: EndPoint, completion: @escaping () -> ())
 }
 
 struct Router: RouterProtocol {
     
-    func request(route: Any, completion: @escaping () -> ()) {
-        let urlRequest = buildRequest(route: route)
-        
-        let urlSessionDataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
-            
-            
-            
+    func request(route: EndPoint, completion: @escaping () -> ()) {
+        if let urlRequest = buildRequest(route: route) {
+            let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
+                
+                if let data = data {
+                    
+                }
+            }
+            dataTask.resume()
         }
-        urlSessionDataTask.resume()
-        
     }
     
-    func buildRequest(route: Any) -> URLRequest {
+    func buildRequest(route: EndPoint) -> URLRequest? {
+        
+//        guard let url = route.baseURL else { return nil }
         
         let url = URL(string: "", relativeTo: URL(string: "")!)!
         let request = URLRequest(url: url)
