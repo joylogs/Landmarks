@@ -26,7 +26,7 @@ struct Router: RouterProtocol {
                 
                 if let data = data {
                     let jsonDecoder = JSONDecoder()
-                    let model = jsonDecoder.decode(Codable.self, from: data)
+                    let model = jsonDecoder.decode(, from: data)
                     
                     
                 }
