@@ -8,14 +8,13 @@
 import Foundation
 
 protocol EndPointType {
-    
     var baseURL: String { get }
+    
 }
 
 protocol RouterProtocol {
     
     associatedtype EndPoint = EndPointType
-    
     func request(route: EndPoint, completion: @escaping () -> ())
 }
 
@@ -26,6 +25,9 @@ struct Router: RouterProtocol {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 
                 if let data = data {
+                    let jsonDecoder = JSONDecoder()
+                    let model = jsonDecoder.decode(Codable.self, from: data)
+                    
                     
                 }
             }
