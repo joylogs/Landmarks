@@ -26,9 +26,12 @@ struct Router: RouterProtocol {
                 
                 if let data = data {
                     let jsonDecoder = JSONDecoder()
-                    let model = jsonDecoder.decode(, from: data)
-                    
-                    
+                    do {
+                        let landmarkMap = try jsonDecoder.decode(Landmark.self, from: data)
+                    }
+                    catch {
+                        print("Unable to decode Landmark Map ", error.localizedDescription)
+                    }
                 }
             }
             dataTask.resume()
