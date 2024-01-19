@@ -7,6 +7,8 @@
 
 import Foundation
 
+typealias T = Codable
+
 protocol EndPointType {
     var baseURL: String { get }
     
@@ -15,12 +17,12 @@ protocol EndPointType {
 protocol RouterProtocol {
     
     associatedtype EndPoint = EndPointType
-    func request(route: EndPoint, completion: @escaping () -> ())
+    func request(route: EndPoint, completion: @escaping (T) -> ())
 }
 
 struct Router: RouterProtocol {
     
-    func request(route: EndPoint, completion: @escaping () -> ()) {
+    func request(route: EndPoint, completion: @escaping (T) -> ()) {
         if let urlRequest = buildRequest(route: route) {
             let dataTask = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
                 
@@ -28,6 +30,7 @@ struct Router: RouterProtocol {
                     let jsonDecoder = JSONDecoder()
                     do {
                         let landmarkMap = try jsonDecoder.decode(Landmark.self, from: data)
+                        completion(landmarkMap)
                     }
                     catch {
                         print("Unable to decode Landmark Map ", error.localizedDescription)
