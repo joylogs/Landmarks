@@ -27,14 +27,10 @@ struct LandmarkList: View {
                 Toggle(isOn: $showFavoritesOnly) {
                     Text("Show Favorites Only")
                 }
-                
                 ForEach(filteredLandmarks) { landmark in
-                    
                     NavigationLink {
-                        
                         LandmarkDetail(landmark: landmark)
                     } label: {
-                        
                         LandmarkRow(landmark: landmark)
                     }
                 }
