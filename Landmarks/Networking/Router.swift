@@ -9,6 +9,11 @@ import Foundation
 
 typealias T = Codable
 
+enum Method {
+    case GET
+    case POST
+}
+
 protocol Task {
     
 }
@@ -18,6 +23,7 @@ protocol EndPointType {
     var path: String { get }
     
     var type: Task { get }
+    var method: Method { get }
 }
 
 protocol RouterProtocol {
