@@ -9,11 +9,15 @@ import Foundation
 
 typealias T = Codable
 
+protocol Task {
+    
+}
+
 protocol EndPointType {
     var baseURL: String { get }
     var path: String { get }
     
-    var type: Type { get }
+    var type: Task { get }
 }
 
 protocol RouterProtocol {
