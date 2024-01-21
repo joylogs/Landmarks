@@ -11,6 +11,7 @@ typealias T = Codable
 
 protocol EndPointType {
     var baseURL: String { get }
+    var path: String { get }
     
 }
 
@@ -43,9 +44,9 @@ struct Router: RouterProtocol {
     
     func buildRequest(route: EndPoint) -> URLRequest? {
         
-//        guard let url = route.baseURL else { return nil }
+        guard let url = route.baseURL else { return nil }
         
-        let url = URL(string: "", relativeTo: URL(string: "")!)!
+        let url = URL(string: "", relativeTo: url)!
         let request = URLRequest(url: url)
         
         return request
