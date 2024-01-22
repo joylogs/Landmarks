@@ -21,7 +21,10 @@ extension Encoding {
         switch self {
         case .urlEncoding:
             
-        default:
+        case .jsonEncoding:
+            
+        case .urlJsonEncoding:
+            
             
         }
     }
