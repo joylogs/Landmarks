@@ -15,6 +15,19 @@ enum Encoding {
     case urlJsonEncoding
 }
 
+extension Encoding {
+    
+    func requestWithParams(urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any]) {
+        switch self {
+        case .urlEncoding:
+            
+        default:
+            
+        }
+    }
+    
+}
+
 enum Method {
     case GET
     case POST
