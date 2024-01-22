@@ -9,6 +9,12 @@ import Foundation
 
 typealias T = Codable
 
+enum Encoding {
+    case urlEncoding
+    case jsonEncoding
+    case urlJsonEncoding
+}
+
 enum Method {
     case GET
     case POST
