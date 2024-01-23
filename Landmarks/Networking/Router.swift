@@ -20,11 +20,12 @@ extension Encoder {
     func requestWith(urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any]) {
         switch self {
         case .urlEncoding:
-
+            URLParameterEncoder().encode(with: &urlRequest, urlParams: urlParams, bodyParams: bodyParams)
         case .jsonEncoding:
-
+            JSONEncoder().encode(with: &urlRequest, urlParams: urlParams, bodyParams: bodyParams)
         case .urlJsonEncoding:
-
+            URLParameterEncoder().encode(with: &urlRequest, urlParams: urlParams, bodyParams: bodyParams)
+            JSONEncoder().encode(with: &urlRequest, urlParams: urlParams, bodyParams: bodyParams)
         }
     }
 }
@@ -104,7 +105,7 @@ struct Router: RouterProtocol {
         
         guard let url = route.baseURL else { return nil }
         
-        let url = URL(string: "", relativeTo: url)!
+//        let url = URL(string: url, relativeTo: route.baseURL)!
         let request = URLRequest(url: url)
         
         return request
