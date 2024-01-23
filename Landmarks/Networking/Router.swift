@@ -44,7 +44,14 @@ struct URLParameterEncoder: Encodable {
 
 struct JSONEncoder: Encodable {
     func encode(with urlRequest: inout URLRequest, urlParams: [String : Any], bodyParams: [String : Any]) {
-        <#code#>
+        
+        do {
+            urlRequest.httpBody = try JSONSerialization.data(withJSONObject: bodyParams, options: .prettyPrinted)
+        }
+        catch {
+            print("JSON Encoder error: Error in Encoding")
+        }
+        
     }
 }
 
