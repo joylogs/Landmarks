@@ -9,26 +9,43 @@ import Foundation
 
 typealias T = Codable
 
-enum Encoding {
+enum Encoder {
     case urlEncoding
     case jsonEncoding
     case urlJsonEncoding
 }
 
-extension Encoding {
+extension Encoder {
     
-    func requestWithParams(urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any]) {
+    func requestWith(urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any]) {
         switch self {
         case .urlEncoding:
-            
+
         case .jsonEncoding:
-            
+
         case .urlJsonEncoding:
-            
-            
+
         }
     }
+}
+
+protocol Encodable {
+    func encode(with urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any])
+}
+
+struct URLParameterEncoder: Encodable {
     
+    func encode(with urlRequest: inout URLRequest, urlParams: [String : Any], bodyParams: [String : Any]) {
+        guard let url = urlRequest.url else { fatalError("URL Parameter Encoder: url is missing") }
+        
+        let queryItems: [URLQueryItem] = Array(arrayLiteral: URLQueryItem(name: "", value: ""))
+    }
+}
+
+struct JSONEncoder: Encodable {
+    func encode(with urlRequest: inout URLRequest, urlParams: [String : Any], bodyParams: [String : Any]) {
+        <#code#>
+    }
 }
 
 enum Method {
@@ -40,6 +57,7 @@ protocol Task {
     
 }
 
+// This is the Main EndPoint to be contacted
 protocol EndPointType {
     var baseURL: String { get }
     var path: String { get }
