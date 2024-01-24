@@ -106,11 +106,14 @@ struct Router: RouterProtocol {
     func buildRequest(route: EndPoint) -> URLRequest? {
         
         guard let url = URL(string: route.path, relativeTo: route.baseURL) else { return nil }
-        let request = URLRequest(url: url)
+        var request = URLRequest(url: url)
+        
         
         func addHeaders(request: inout URLRequest) {
             
+            request.addValue("", forHTTPHeaderField: "")
         }
+        addHeaders(request: &request)
         
         return request
         
