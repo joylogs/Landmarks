@@ -7,6 +7,7 @@
 
 import Foundation
 
+typealias JSON = [String: Any]
 typealias T = Codable
 
 enum Encoder {
@@ -17,7 +18,7 @@ enum Encoder {
 
 extension Encoder {
     
-    func requestWith(urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any]) {
+    func requestWith(urlRequest: inout URLRequest, urlParams: JSON, bodyParams: JSON) {
         switch self {
         case .urlEncoding:
             URLParameterEncoder().encode(with: &urlRequest, urlParams: urlParams, bodyParams: bodyParams)
@@ -31,12 +32,12 @@ extension Encoder {
 }
 
 protocol Encodable {
-    func encode(with urlRequest: inout URLRequest, urlParams: [String: Any], bodyParams: [String: Any])
+    func encode(with urlRequest: inout URLRequest, urlParams: JSON, bodyParams: JSON)
 }
 
 struct URLParameterEncoder: Encodable {
     
-    func encode(with urlRequest: inout URLRequest, urlParams: [String : Any], bodyParams: [String : Any]) {
+    func encode(with urlRequest: inout URLRequest, urlParams: JSON, bodyParams: JSON) {
         guard let url = urlRequest.url else { fatalError("URL Parameter Encoder: url is missing") }
         
         let queryItems: [URLQueryItem] = Array(arrayLiteral: URLQueryItem(name: "", value: ""))
@@ -44,7 +45,7 @@ struct URLParameterEncoder: Encodable {
 }
 
 struct JSONEncoder: Encodable {
-    func encode(with urlRequest: inout URLRequest, urlParams: [String : Any], bodyParams: [String : Any]) {
+    func encode(with urlRequest: inout URLRequest, urlParams: JSON, bodyParams: JSON) {
         
         do {
             urlRequest.httpBody = try JSONSerialization.data(withJSONObject: bodyParams, options: .prettyPrinted)
@@ -67,7 +68,8 @@ protocol Task {
 
 // This is the Main EndPoint to be contacted
 protocol EndPointType {
-    var baseURL: String { get }
+    
+    var baseURL: URL { get }
     var path: String { get }
     
     var type: Task { get }
@@ -103,10 +105,12 @@ struct Router: RouterProtocol {
     
     func buildRequest(route: EndPoint) -> URLRequest? {
         
-        guard let url = route.baseURL else { return nil }
-        
-//        let url = URL(string: url, relativeTo: route.baseURL)!
+        guard let url = URL(string: route.path, relativeTo: route.baseURL) else { return nil }
         let request = URLRequest(url: url)
+        
+        func addHeaders(request: inout URLRequest) {
+            
+        }
         
         return request
         
