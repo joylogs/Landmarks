@@ -180,7 +180,7 @@
 			children = (
 				7603C31C2B4537C700CBD980 /* LandmarksApp.swift */,
 				7603C3502B45B85500CBD980 /* Views */,
-				765C058F2B5AF1E000FC6744 /* New Group */,
+				765C058F2B5AF1E000FC6744 /* Data */,
 				76BA8E072B48801C00FB312F /* Networking */,
 				7603C3522B45B88A00CBD980 /* Resources */,
 				7603C3202B4537C900CBD980 /* Assets.xcassets */,
@@ -288,13 +288,13 @@
 			path = Category;
 			sourceTree = "<group>";
 		};
-		765C058F2B5AF1E000FC6744 /* New Group */ = {
+		765C058F2B5AF1E000FC6744 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				765C05902B5AF1F300FC6744 /* JSONModel */,
 				7603C3512B45B86200CBD980 /* Model */,
 			);
-			path = "New Group";
+			path = Data;
 			sourceTree = "<group>";
 		};
 		765C05902B5AF1F300FC6744 /* JSONModel */ = {
