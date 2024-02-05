@@ -11,6 +11,7 @@ struct LandmarkDetail: View {
     
     @EnvironmentObject var modelData: ModelData
     
+    
     var landmark: Landmark
     
     var landmarkIndex: Int {
@@ -20,6 +21,8 @@ struct LandmarkDetail: View {
     }
     
     var body: some View {
+        
+//        @Binding var modelData: ModelData
         
         ScrollView {
             MapView(coordinate: landmark.locationCoordinate)
@@ -57,7 +60,10 @@ struct LandmarkDetail: View {
 }
 
 struct LandmarkDetail_Previews: PreviewProvider {
+    
     static var previews: some View {
+        let modelData = ModelData()
         LandmarkDetail(landmark: ModelData().landmarks[0])
+            .environmentObject(modelData)
     }
 }
