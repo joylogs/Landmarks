@@ -22,6 +22,7 @@ struct LandmarkDetail: View {
     
     var body: some View {
         
+        //TO DO: Check if the below can be incorporated
 //        @Binding var modelData: ModelData
         
         ScrollView {
