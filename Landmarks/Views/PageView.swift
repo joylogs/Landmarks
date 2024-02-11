@@ -16,8 +16,8 @@ struct PageView<Page: View>: View {
         VStack {
             PageViewController(pages: pages, currentPage: $currentPage)
             Text("Current Page: \(currentPage)")
-                .aspectRatio(3 / 2, contentMode: .fit)
         }
+        .aspectRatio(3 / 2, contentMode: .fit)
     }
 }
 
