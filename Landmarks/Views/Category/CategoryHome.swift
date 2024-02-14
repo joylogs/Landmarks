@@ -15,7 +15,7 @@ struct CategoryHome: View {
     var body: some View {
         
         NavigationSplitView {
-            List {                                
+            List {
                 PageView(pages: modelData.features.map { FeatureCard(landmark: $0) })
                 .listRowInsets(EdgeInsets())
                 
